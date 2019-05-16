@@ -1,0 +1,90 @@
+Name: Archit Siby ,Jaysinh Parmar
+ID #: 1544939 ,1532143
+CMPUT 275 Wi19
+Project: CheckerAI
+
+
+Folders Included:
+	-client
+	Files included:
+		*client.cpp
+		*Makefile
+	-server
+	Files included:
+	 	*CheckersAI.cpp
+	 	*CheckersAI.h
+	 	*CheckerBoard.cpp
+	 	*CheckerBoard.h
+	 	*Piece.cpp
+	 	*Piece.h
+	 	*Player.cpp
+	 	*Player.h
+	 	*Human.cpp
+	 	*Human.h
+	 	*AI.cpp
+	 	*AI.h
+	 	*AImove.cpp
+	 	*AImove.h
+	 	*serialport.cpp
+	 	*serialport.h
+	 	*Utils.h
+	 	*Makefile
+
+
+Before Running:
+
+Wiring Instructions:
+
+TFT Board Pin <---> Arduino Pin
+===========================
+GND             GND
+Vin             5V
+3Vo             NOT CONNECTED
+CLK             52
+MISO            50
+MOSI            51
+CS              10
+D/C             9
+RST             NOT CONNECTED
+Lite            NOT CONNECTED
+Y+              A2 (analog pin)
+X+              4  (digital pin)
+Y-              5  (digital pin)
+X-              A3 (analog pin)
+IM0 - IM3       NOT CONNECTED (they expect a 3.3v signal, DON'T CONNECT!)
+CCS             6
+CD              NOT CONNECTED
+
+Joystick Pin <---> Arduino Pin
+===========================
+GND             GND
+Vin             5V
+JOY_VERT(VRx)  	A1
+JOY_HORIZ(VRy) 	A0 
+JOY_SEL   		2
+
+- Connect Arduino
+
+Running Intructions:
+    1.Wire the Arduino to the TFT screen and the joystick according to the instructions.
+    2.Open the client and server directories in the Terminal.
+    3.Enter the "make upload" command in the client terminal to upload the client to the connected Arduino. 
+    4.Enter the "make" command in the server terminal to create the server executable.
+    5.Enter the "./CheckerAI" command in the server terminal to run the server and begin communication with the arduino.
+    6.The arduino screen will now refresh and be ready to play the Checker game using the joystick.
+
+Functionality:
+    - Move the joystick:
+    	 Move around the red box to traverse the checker board
+    - Press the Joystick:
+    	 When pressed on a box, the box will turn blue meaning that is selected. Now you are able to select a second box to complete an action request which is computed by the server to know whether the move is valid or not.
+    -When a successful move is made:
+    	The piece will execute the move and the AI will also execute the next move. Now its ready for the player to make their move again.
+
+
+
+   
+
+
+
+**** Some functions were taken from Eclass and further develeoped ****
